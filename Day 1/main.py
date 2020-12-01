@@ -12,12 +12,12 @@ inputFile.close()
 i = 0
 for num in inputList:
     inputList[i] = inputList[i].replace("\n", "")
-    int(inputList[i])
+    inputList[i] = int(inputList[i])
     i += 1
-
-# print(inputList)
 
 for i in inputList:
     for j in inputList:
         if i + j == 2020:
-            print(f"{i} and {j}")
+            ans = i * j
+            print(ans)
+            quit()
