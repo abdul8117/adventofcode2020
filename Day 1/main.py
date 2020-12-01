@@ -1,23 +1,34 @@
-inputList = []
-inputFile = open("Day 1/input.txt", "r")
+# two numbers whose sum is 2020
+def find_product_2(input_):
+    for i in input_:
+        for j in input_:
+            if i + j == 2020:
+                return i * j
 
-for line in inputFile:
-    inputList.append(line)
+# three numbers whose sum is 2020
+def find_product_3(input_):
+    for i in input_:
+        for j in input_:
+            for k in input_:
+                if i + j + k == 2020:
+                    return i * j * k
 
-inputFile.close()
+
+input_list = []
+input_file = open("Day 1/input.txt", "r")
+
+for line in input_file:
+    input_list.append(line)
+
+input_file.close()
 
 # remove the last two characters of each string in the list
 # cast each item into an integer
-
 i = 0
-for num in inputList:
-    inputList[i] = inputList[i].replace("\n", "")
-    inputList[i] = int(inputList[i])
+for num in input_list:
+    input_list[i] = input_list[i].replace("\n", "")
+    input_list[i] = int(input_list[i])
     i += 1
 
-for i in inputList:
-    for j in inputList:
-        if i + j == 2020:
-            ans = i * j
-            print(ans)
-            quit()
+print(find_product_2(input_list))
+print(find_product_3(input_list))
