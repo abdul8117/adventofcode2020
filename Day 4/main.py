@@ -6,6 +6,7 @@ def parse_file():
 
     return passport_list
 
+
 def validate_passport(passport):
     required_info = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
 
@@ -25,5 +26,6 @@ def main():
             valid_count += 1
     
     print(valid_count)
+
 
 main()
