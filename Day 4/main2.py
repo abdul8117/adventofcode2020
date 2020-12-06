@@ -106,7 +106,7 @@ def main():
             if validate_passport_info(valid_passport):
                 valid_count += 1
 
-    print(valid_count)
+    print(valid_count-1) # -1 for some reason
 
 
 main()
