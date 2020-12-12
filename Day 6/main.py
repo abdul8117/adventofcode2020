@@ -1,16 +1,11 @@
 f = open("Day 6/input.txt", "r")
-letters = []
+groups = f.read().split("\n\n")
+f.close()
+
 answers = 0
 
-for line in f:
-    # indicates a new group's answers
-    if line == "\n":
-        letters = []
-        answers = 0
-        continue
-    
-    for letter in line:
-        line = line.replace("\n", "")
+for group in groups:
+    group = group.replace("\n", "")
+    answers += len(set(group))
 
-    
-f.close()
+print(answers)

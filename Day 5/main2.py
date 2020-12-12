@@ -55,5 +55,4 @@ def main():
     print(find_seat_ID(IDs_sorted))
 
 
-
 main()
