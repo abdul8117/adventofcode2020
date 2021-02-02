@@ -1,15 +1,23 @@
+f = open("Day 6/input.txt", "r")
+groups = f.read().split("\n\n")
 
-def parse_file(fileName):
-    f = open(f"Day 6/{fileName}", "r")
-    groups = f.read().split("\n\n")
-    f.close()
-
-    return groups
-
-letters = []
+unique_letters = []
 answers = 0
 
-for i in parse_file("input.txt"):
-    print(f"{i}")
+for line in f:
+    # indicates a new group's answers
+    if line == "\n":
+        letters = []
+        continue
 
-print(parse_file("input.txt"))
+    line = line.replace("\n", "")
+
+    for letter in line:
+        if letter not in unique_letters:
+            answers += 1
+            unique_letters.append(letter)
+
+
+f.close()
+
+print(answers)
